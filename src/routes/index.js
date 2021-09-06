@@ -9,8 +9,8 @@ import SignIn from '../pages/SignIn'
 const Routes = () => {
    return(
        <BrowserRouter>
-           <Route component = { Home }  path="/" exact />
-           <Route component = { SignIn }  path="/sign-in" />
+            <Route component = { SignIn }  path="/" exact />
+           <Route component = { Home }  path="/home"  />
        </BrowserRouter>
    )
 }

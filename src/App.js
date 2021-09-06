@@ -2,7 +2,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import React from 'react';
 import theme from './theme';
 import Routes from "./routes";
-
+import './mock';
 
 function App() {
    return(
