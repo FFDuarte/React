@@ -9,10 +9,12 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import { useHistory  } from 'react-router-dom';
-import authService from '../../services/authService';
 import  FormHelperText  from '@material-ui/core/FormHelperText';
+import {useSelector, useDispatch} from 'react-redux';
+import  {signIn} from '../../actions/accountActions';
 
 const useStyles = makeStyles((theme) => ({
+
     avatar: {
         margin: theme.spacing(4),
         background: theme.palette.primary.main,
@@ -93,19 +95,26 @@ function SingIn(){
     const [ password, setPassword] = useState('');
     const [ errorMessage, setErrorMessage ] = useState();
 
+    const dispatch = useDispatch();
+    const account = useSelector( store => store);
+
     let history = useHistory();
   
     async function handleClick() {
 
         try{
-             await authService.singIn(email, password);
+             await dispatch(signIn(email, password));
+                
              history.push("/home");
             }catch(error){
-            setErrorMessage(error.response.data.message);
+             alert(setErrorMessage.error);
+             console.log(error);
+
         }
 
 
     }
+    console.log(account);
 
     return(
         <Grid  container className={classes.root}>
