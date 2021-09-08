@@ -7,7 +7,6 @@ mock.onPost('/api/home/me').reply(200,{
         'username': 'FFDuarte',
         'email': 'bricio.duarte.fernando@gmail.com',
         'avatar': '/images/avatars/avatar_1.jpeg'
-
     }
 });
 

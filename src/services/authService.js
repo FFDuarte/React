@@ -36,11 +36,16 @@ class AuthService {
         });
     }
 
+    signOut = () => {
+        this.removeToken();
+    }
 
     setToken = (token) =>{
         localStorage.setItem("accessToken" , token );
         
     }
+
+    removeToken = () => localStorage.removeItem('accessToken')
 
     getToken = () => localStorage.getItem("accessToken" );
 

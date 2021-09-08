@@ -2,11 +2,9 @@ import React from 'react';
 import { Button, makeStyles } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/ToolBar';
-import SvgIcon  from '@material-ui/core/SvgIcon';
-import  { Bell } from 'react-feather';
-import Avatar  from '@material-ui/core/Avatar';
-import { useSelector } from 'react-redux';
-
+import Account from './Account';
+import Notifications from './Notifications';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles({
     appBar: {
@@ -22,22 +20,16 @@ const useStyles = makeStyles({
         display: 'flexGrow',
         alignItems: 'center'
     },
-    button: {
-        marginRight: 10,
-    },
-    bell: {
-        marginRight: 10,
-    },
     avatar:{
         marginRight: 10,
       
-    }
+    },
+   
     
 });
 
 function Header(){
     const classes = useStyles();
-    const account = useSelector (state => state.account)  ;
 
     return(
         <AppBar position="fixed" color="inherit" className={classes.appBar} >
@@ -51,12 +43,16 @@ function Header(){
                         <Button color="primary" variant="contained" className={classes.button}>
                             Novo Post
                         </Button>
-                        <SvgIcon className={classes.bell} > 
-                            <Bell  ></Bell>
-                        </SvgIcon>
+                    </div>
+                    <div>
+                        <Box ml={2}>
+                         <Notifications/> 
+                       </Box>  
                     </div>
                     <div className={classes.userSection}>
-                        <Avatar alt="Remy Sharp"  className={classes.avatar} src={account.user && account.user.avatar}> </Avatar> 
+                        <Box ml={2}>
+                            <Account />  
+                        </Box>
                     </div>
 
 
