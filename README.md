@@ -13,8 +13,8 @@ React Redux: https://react-redux.js.org/
 Middleware Redux Thunk: https://github.com/reduxjs/redux-thunk
 ESLint: https://eslint.org/
 Prettier: https://prettier.io/
-React-dropzone: https://github.com/react-dropzone/rea...
-React-markdown: https://github.com/rexxars/react-mark...
+React-dropzone: https://github.com/react-dropzone
+React-markdown: https://github.com/rexxars/react-markdown
 
 # Getting Started with Create React App
 
