@@ -1,46 +1,46 @@
 import React from 'react';
-import { makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import { Switch , Route } from 'react-router-dom';
 
-import Header  from './components/Header';
-import Feed  from './components/Feed';
-import NavBar  from './components/NavBar';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
+import Header from './Header';
+import NewPost from '../Post/New';
+import Feed from '../Feed';
+import Post from '../Post';
+import Profile from '../Profile';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: theme.palette.background.dark,
+  },
+  main: {
+    padding: 24,
+  },
+  toolbar: {
+    minHeight: 64,
+  },
+}));
 
-const useStyles = makeStyles({
-    root:{
-        display: 'flex',
-        flexDirection: 'column'
-    },
-    main: {
-        height: '100vh',
-        display: 'flex',
-        width: '1280px',
-        margin: ' 0 auto',
-    },
-    toolbar: {
-        minHeight: '64px',
-    }
+function Home() {
+  const classes = useStyles();
 
-})
-
-function Home(){
-    const classes = useStyles();
-    return(
-        <div className={classes.root}>
-            <Header></Header>
-            <div className={classes.toolbar}></div>
-            <main className={classes.main}>
-                <Container maxWidth="lg">
-                    <Box display="flex">
-                        <NavBar />
-                         <Feed />
-                    </Box>
-                </Container>
-            </main>
-        </div>
-    );
+  return (
+    <div className={classes.root}>
+      <Header />
+      <div className={classes.toolbar} />
+      <main className={classes.main}>
+        <Switch >
+          <Route path="/" element={<Feed />} />
+          <Route path="/:username" element={<Profile />} />
+          <Route path="/feed" element={<Feed />} />
+          <Route path="/post/new" element={<NewPost />} />
+          <Route path="/post/:slug" element={<Post />} />
+          <Route path="*" element={<h1>404!</h1>} />
+        </Switch>
+      </main>
+    </div>
+  );
 }
 
 export default Home;

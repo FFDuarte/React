@@ -1,3 +1,21 @@
+login: Bricio.duarte.fernando@gmail.com
+senha: admin
+
+
+Node.js: https://nodejs.org/
+React: https://reactjs.org/
+Material-ui: https://material-ui.com/ 
+Material Design:https://material.io/design/
+Axios: https://github.com/axios/axios
+React-router: https://reactrouter.com/
+Redux: https://redux.js.org/
+React Redux: https://react-redux.js.org/
+Middleware Redux Thunk: https://github.com/reduxjs/redux-thunk
+ESLint: https://eslint.org/
+Prettier: https://prettier.io/
+React-dropzone: https://github.com/react-dropzone/rea...
+React-markdown: https://github.com/rexxars/react-mark...
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

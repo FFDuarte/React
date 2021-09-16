@@ -1,26 +1,29 @@
-import { ThemeProvider } from '@material-ui/styles';
 import React from 'react';
-import theme from './theme';
-import Routes from "./routes/routes";
-import './mock';
-import { Provider } from 'react-redux';
-import store from './store';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { BrowserRouter , Route } from 'react-router-dom';
+
 import Auth from './components/Auth';
 
+// import theme from './theme';
+import createTheme from './theme';
+import { useSettings } from './context/SettingsContext';
+import Routes from '../src/routes/routes';
+import './mock';
 
-function App( ) {
-   return(
-      <Provider store={store}>
-         <ThemeProvider theme={theme}>
-            <Auth>
-               <Routes >
-                  
-               </Routes>
-            </Auth>   
-         </ThemeProvider>
-      </Provider>
-  
-   );
+function App() {
+  const { settings } = useSettings();
+
+  return (
+    <ThemeProvider theme={createTheme(settings)}>
+      <BrowserRouter>
+        <Auth>
+          <Routes>
+           
+          </Routes>
+        </Auth>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 }
 
 export default App;

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Button, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/ToolBar';
 import Account from './Account';
 import Notifications from './Notifications';
 import Box from '@material-ui/core/Box';
+import WritePost from './WritePost';
 
 const useStyles = makeStyles({
     appBar: {
@@ -40,9 +41,7 @@ function Header(){
 
                    
                     <div className={classes.userSection}>
-                        <Button color="primary" variant="contained" className={classes.button}>
-                            Novo Post
-                        </Button>
+                        <WritePost></WritePost>
                     </div>
                     <div>
                         <Box ml={2}>

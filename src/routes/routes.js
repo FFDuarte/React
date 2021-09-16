@@ -3,13 +3,13 @@ import { Route, BrowserRouter} from 'react-router-dom';
 
 import Home from '../pages/Home'
 import SignIn from '../pages/SignIn'
-import GuestRoutes from './GuestRoutes';
+import GuestRoutes from './GuestRoute';
 
 const Routes = () => {
    return(
        <BrowserRouter>
-            <GuestRoutes  path="/"  component = { SignIn } exact   />
-            <Route    path="/home"  component = { Home }   />
+            <GuestRoutes  path="/SignIn"  component = { SignIn } exact   />
+            <Route    path="/"  component = { Home }   />
        </BrowserRouter>
    )
 }

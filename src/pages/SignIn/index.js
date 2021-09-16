@@ -1,3 +1,5 @@
+
+
 import React,{ useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import  Typography  from '@material-ui/core/Typography';
@@ -8,7 +10,7 @@ import LockIcon from '@material-ui/icons/Lock';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
-import { useHistory  } from 'react-router-dom';
+import { useHistory   } from 'react-router-dom';
 import  FormHelperText  from '@material-ui/core/FormHelperText';
 import {useSelector, useDispatch} from 'react-redux';
 import  {signIn} from '../../actions/accountActions';
@@ -98,14 +100,14 @@ function SingIn(){
     const dispatch = useDispatch();
     const account = useSelector( store => store);
 
-    let history = useHistory();
-  
+    const history = useHistory();
+    
     async function handleClick() {
 
         try{
              await dispatch(signIn(email, password));
                 
-             history.push("/home");
+             history.push('/home')
             }catch(error){
              alert(setErrorMessage.error);
              console.log(error);
